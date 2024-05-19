@@ -1,0 +1,41 @@
+{
+	"name": "storybook-transform-vue-arg-types",
+	"version": "1.0.0",
+	"private": false,
+	"type": "module",
+	"main": "./dist/main.cjs",
+	"module": "./dist/main.js",
+	"types": "./types/main.d.ts",
+	"exports": {
+		"types": "./types/main.d.ts",
+		"import": "./dist/main.js",
+		"require": "./dist/main.cjs"
+	},
+	"files": [
+		"README.md",
+		"types",
+		"dist"
+	],
+	"publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
+	"scripts": {
+		"pu": "npm run test && npm run build && npm publish",
+		"build": "tsc --declaration & vite build",
+		"dev": "npm run test:ui",
+		"test": "vitest run",
+		"test:ui": "vitest --ui",
+		"test:dev": "vitest"
+	},
+	"devDependencies": {
+		"@storybook/types": "^8.1.1",
+		"@storybook/vue3": "^8.1.1",
+		"@types/node": "^20.12.7",
+		"@vitest/ui": "^1.4.0",
+		"jsdom": "^24.0.0",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.8",
+		"vitest": "^1.4.0",
+		"vue": "^3.4.27"
+	}
+}
