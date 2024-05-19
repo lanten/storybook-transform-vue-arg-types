@@ -20,8 +20,6 @@ export function transformVueArgTypes<T extends ComponentPropsOptions, K extends 
     const typeList: any[] = Array.isArray(propsItem.type) ? propsItem.type : [propsItem.type]
     const firstType = typeList[0]
 
-    // console.log(firstType, firstType?.name)
-
     const argTypeItem: InputType = {
       name: key,
       description: descMap?.[key as unknown as K],
@@ -91,8 +89,6 @@ function transformTypeName(type: any) {
 }
 
 function transformStorybookTypeName(type: any) {
-  console.log(type, type?.name)
-
   switch (type?.name) {
     case 'Boolean':
       return 'boolean'
